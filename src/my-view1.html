@@ -26,8 +26,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style include="shared-styles" is="custom-style">
        :host {
         display: block;
-        padding: 10px;
-        }
+        padding-top: 10%;
+      }
+
 
 
       .cards {
@@ -36,6 +37,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         @apply(--layout-center-justified);
         @apply(--layout-wrap);
       }
+
 
 
       paper-card.card {
@@ -52,6 +54,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
 
+
       .size-position {
         margin: 0px;
         top: 0px;
@@ -64,11 +67,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
 
+
       .contianer {
         height: 100%;
         @apply(--layout-vertical);
         @apply(--layout-center-justified);
+        margin: 0px !important;
       }
+
 
 
       .number {
@@ -78,10 +84,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
 
+
       .button {
         @apply(--layout-flex);
         text-align: center;
       }
+
 
 
       main {
@@ -90,7 +98,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
 
     <main>
-      <div style="height: 3rem;"></div>
+      <!--<div style="height: 3rem;"></div>-->
       <section class="cards">
         <template is="dom-repeat" items="[[numbers]]" as='number'>
           <paper-card class="card" on-tap="_openDialog">
@@ -130,7 +138,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.$.dialog.open()
       },
       _closeDialog: function (e) {
-        this.set('currentNumber','');
+        this.set('currentNumber', '');
         this.$.dialog.close()
       }
     });
